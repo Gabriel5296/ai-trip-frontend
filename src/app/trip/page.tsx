@@ -31,7 +31,7 @@ export default function TripPlanner() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:8000/trip-plan/", {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/trip-plan/`, {
         ...formData,
         days: Number(formData.days),
       });
